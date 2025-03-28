@@ -19,16 +19,18 @@ cd co-operation-frontend
 
 ### 2. パッケージのインストール
 ```bash
-npm install  # または yarn install / pnpm install
+npm install
 ```
 
 ### 3. 環境変数の設定
 `.env.local` ファイルを作成し、以下のように環境変数を設定します。
 ```
-NEXT_PUBLIC_API_TRANSACTION=[frontend-connection-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/frontend-connection-service)のAPIのURL
-NEXT_PUBLIC_API_CARRIER=[carrier-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/carrier-service)のAPIのURL
+|環境変数                |説明 |例 |
+|:-------------------------------------------|:-------|:-------|
+|NEXT_PUBLIC_API_TRANSACTION                 |[frontend-connection-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/frontend-connection-service)のサービスのURL |http://localhost:2200 |
+|NEXT_PUBLIC_API_CARRIER                 |[carrier-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/carrier-service)のサービスのURL |http://localhost:2900 |
 ```
-### 4. API開発サーバーの起動
+### 4. 必要なAPI開発サーバーの起動
 - frontend-connection-serviceサーバーを起動する
 - carrier-serviceサーバーを起動する
 
@@ -40,12 +42,11 @@ npm run dev
 ブラウザで `http://localhost:3000` にアクセスして確認してください。
 
 ## 設計標準
-### 主な機能
-- ユーザーインターフェース
+### ユーザーインターフェース
   - 直感的な操作性を重視したUI設計
   - レスポンシブデザインによるマルチデバイス対応
 
-- システム連携
+### システム連携
   - RESTful APIとの通信
   - エラーハンドリング
 
@@ -100,5 +101,6 @@ npm run dev
 - 本リポジトリの利用により生じた損失及び損害等について、いかなる責任も負わないものとします。
 
 ## その他
-プロジェクトへの貢献を歓迎します。貢献する前に、`CONTRIBUTING.md` を必ず確認してください。
+プロジェクトへの貢献を歓迎します。貢献する前に、[CONTRIBUTING.md](CONTRIBUTING.md) を必ず確認してください。
+
 

@@ -24,12 +24,11 @@ npm install
 
 ### 3. 環境変数の設定
 `.env.local` ファイルを作成し、以下のように環境変数を設定します。
-```
 |環境変数                |説明 |例 |
 |:-------------------------------------------|:-------|:-------|
 |NEXT_PUBLIC_API_TRANSACTION                 |[frontend-connection-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/frontend-connection-service)のサービスのURL |http://localhost:2200 |
 |NEXT_PUBLIC_API_CARRIER                 |[carrier-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/carrier-service)のサービスのURL |http://localhost:2900 |
-```
+
 ### 4. 必要なAPI開発サーバーの起動
 - frontend-connection-serviceサーバーを起動する
 - carrier-serviceサーバーを起動する

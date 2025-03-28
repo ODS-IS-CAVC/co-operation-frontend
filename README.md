@@ -1,25 +1,20 @@
 # 共同輸送システムプロジェクト - フロントエンド
 
 ## 概要・目的
-このリポジトリは、共同輸送システムプロジェクトのフロントエンド部分を管理するものです。本システムは、運送能力情報を効率的に管理し、可視化し、ユーザーにとって使いやすいインターフェースを提供することを目的としています。
+このリポジトリは、共同輸送システムの一部であり、運行管理システムのフロントエンドです。本システムは、運行管理の効率化を図るとともに、共同輸送のコアシステムとの円滑な連携を実現し、ユーザーにとって使いやすいインターフェースを提供することを目的としています。
+以下、アーキテクチャ概要を示す。  
+![](./docs/architecture.png)
 
-## 技術スタック
-- **フレームワーク:** Next.js 14.2
-- **プログラミング言語:** TypeScript
-- **スタイル:** Tailwind CSS, Hero UI
-- **状態管理:** Redux Toolkit
-- **API通信:** Axios
-- **フォームバリデーション:** Yup, React Hook Form
+本システムは[co-operation-frontend](https://github.com/ODS-IS-CAVC/co-operation-frontend.git)です。
 
 ## 前提環境
-- **Node.js:** v18 以上
-- **パッケージマネージャ:** npm / yarn / pnpm (いずれかを選択)
+- **Node.js:** v18 以上 v22 以下
 
-## 環境構築・起動手順
+## ビルド・起動手順
 ### 1. リポジトリのクローン
 ```bash
-git clone https://github.com/NextLogisticsJapan/release_OSS.git
-cd release_OSS/co-operator-frontend
+git clone https://github.com/ODS-IS-CAVC/co-operation-frontend.git
+cd co-operation-frontend
 ```
 
 ### 2. パッケージのインストール
@@ -30,23 +25,20 @@ npm install  # または yarn install / pnpm install
 ### 3. 環境変数の設定
 `.env.local` ファイルを作成し、以下のように環境変数を設定します。
 ```
-NEXT_PUBLIC_API_TRANSACTION=your_api_url_here
-NEXT_PUBLIC_API_CARRIER=your_api_url_here
-NEXT_PUBLIC_API_SHIPPER=your_api_url_here
+NEXT_PUBLIC_API_TRANSACTION=[frontend-connection-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/frontend-connection-service)のAPIのURL
+NEXT_PUBLIC_API_CARRIER=[carrier-service](https://github.com/ODS-IS-CAVC/co-operation-backend-services.git/carrier-service)のAPIのURL
 ```
+### 4. API開発サーバーの起動
+- frontend-connection-serviceサーバーを起動する
+- carrier-serviceサーバーを起動する
 
-### 4. 開発サーバーの起動
+### 5. 開発サーバーの起動
 ```bash
-npm run dev  # または yarn dev / pnpm dev
+npm run dev 
 ```
-
+## テスト手順
 ブラウザで `http://localhost:3000` にアクセスして確認してください。
 
-## ビルド手順
-本番環境向けに最適化されたビルドを作成するには、以下のコマンドを実行します。
-```bash
-npm run build  # または yarn build / pnpm build
-```
 ## 設計標準
 ### 主な機能
 - ユーザーインターフェース
@@ -92,18 +84,20 @@ npm run build  # または yarn build / pnpm build
 - **ブランチ戦略:** `main`（本番） / `develop`（開発） / `feature/*`（機能ごと）
 
 ## 処理概要
-- 配送管理
+- 運行管理を行う
+- 自動運転運行監視システム連携を行う
 
 
 ## 問合せ・要望
-問題が発生した場合や質問がある場合は、[サポートページ](https://github.com/NextLogisticsJapan/frontend/issues) にて Issue を作成してください。
+問題が発生した場合や質問がある場合は、[サポートページ](https://github.com/ODS-IS-CAVC/co-operation-frontend/issues) にて Issue を作成してください。
 
 ## ライセンス
 このプロジェクトは [MITライセンス](LICENSE.txt) のもとで公開されています。  
 詳細についてはリポジトリ内の `LICENSE` ファイルをご確認ください。
 
 ## 免責事項
-このソフトウェアは「現状のまま」提供され、明示または黙示を問わず、いかなる保証も行いません。
+- 本リポジトリの内容は予告なく変更・削除する可能性があります。
+- 本リポジトリの利用により生じた損失及び損害等について、いかなる責任も負わないものとします。
 
 ## その他
 プロジェクトへの貢献を歓迎します。貢献する前に、`CONTRIBUTING.md` を必ず確認してください。
